@@ -675,6 +675,82 @@
   }
   .social-links svg { width: 18px; height: 18px; }
 
+  /* ============ COMMUNITY CHAMPIONS ============ */
+  .champions {
+    padding: 5rem 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .champions-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    color: var(--red);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .champions-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2.5rem;
+    letter-spacing: -.02em;
+  }
+  .champions-title em { color: var(--red); font-style: italic; }
+  .champions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .champion {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    transition: all .35s cubic-bezier(.2,.8,.2,1);
+    position: relative;
+  }
+  .champion:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--red);
+  }
+  .champion-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .champion-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -.015em;
+  }
+  .champion-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .8rem;
+    color: var(--navy);
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .champion-url .arrow { transition: transform .25s ease; }
+  .champion:hover .champion-url .arrow { transform: translateX(4px); }
+  @media (max-width: 700px) {
+    .champions-grid { grid-template-columns: 1fr; }
+  }
+
   /* ============ SUSTAINING MEMBERS ============ */
   .members {
     padding: 5rem 2.5rem;
@@ -989,9 +1065,27 @@
   </div>
 </section>
 
+<!-- COMMUNITY CHAMPIONS -->
+<section class="champions">
+  <div class="champions-eyebrow">— 05 / Community Champions</div>
+  <h2 class="champions-title">Allies in the <em>arena.</em></h2>
+  <div class="champions-grid">
+    <a href="https://carlsbadrepublicans.com/" class="champion" target="_blank" rel="noopener">
+      <span class="champion-label">→ Federated Partner</span>
+      <span class="champion-name">Carlsbad Republican Women Federated</span>
+      <span class="champion-url">carlsbadrepublicans.com <span class="arrow">→</span></span>
+    </a>
+    <a href="https://ocyr.org/" class="champion" target="_blank" rel="noopener">
+      <span class="champion-label">→ Sister Chapter</span>
+      <span class="champion-name">Orange County Young Republicans</span>
+      <span class="champion-url">ocyr.org <span class="arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
 <!-- SUSTAINING MEMBERS -->
 <section class="members">
-  <div class="members-eyebrow">— 05 / Sustaining Members</div>
+  <div class="members-eyebrow">— 06 / Sustaining Members</div>
   <h2 class="members-title">The backbone of the movement.</h2>
   <ul class="members-list">
     <li>Cynthia Kaui</li>

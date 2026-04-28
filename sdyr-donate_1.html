@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Support San Diego Young Republicans. Your donation funds events, training, and the next generation of conservative leaders in San Diego County." />
+<title>Donate — San Diego Young Republicans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,800&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:      #c8102e;
+    --red-deep: #8b0a1f;
+    --ink:      #0a0e1a;
+    --navy:     #11233f;
+    --cream:    #f5efe1;
+    --paper:    #ede4cf;
+    --gold:     #d4a017;
+    --white:    #ffffff;
+    --grain-opacity: .07;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 239, 225, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(10, 14, 26, 0.08);
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    text-decoration: none;
+  }
+  .logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+  .logo:hover img { transform: rotate(-15deg) scale(1.05); }
+  .logo span.wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -.01em;
+    line-height: 1;
+  }
+  .logo span.wordmark small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .58rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    color: var(--red);
+    margin-top: 3px;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    align-items: center;
+    font-size: .92rem;
+    font-weight: 500;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-links a.active { color: var(--red); }
+  .nav-links a::after {
+    content:'';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 2px;
+    background: var(--red);
+    transition: width .3s ease;
+  }
+  .nav-links a:hover::after,
+  .nav-links a.active::after { width: 100%; }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--cream) !important;
+    padding: .65rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 600;
+    transition: all .25s;
+  }
+  .nav-cta:hover { background: var(--red); transform: translateY(-1px); }
+  .nav-cta::after { display: none; }
+
+  /* ============ PAGE HEADER ============ */
+  .page-head {
+    padding: 9rem 2.5rem 3rem;
+    text-align: center;
+    position: relative;
+  }
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+  .page-eyebrow::before,
+  .page-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--red);
+  }
+  .page-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(3.2rem, 8vw, 6.5rem);
+    line-height: .95;
+    letter-spacing: -.035em;
+    margin-bottom: 1.2rem;
+  }
+  .page-title em {
+    color: var(--red);
+    font-style: italic;
+  }
+  .page-sub {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--navy);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* ============ VIDEO ============ */
+  .video-section {
+    padding: 2rem 2.5rem 4rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .video-frame {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    padding: 1rem;
+    box-shadow: 10px 10px 0 var(--red);
+    position: relative;
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .video-frame:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 13px 13px 0 var(--red);
+  }
+  .video-frame::before {
+    content: '★ THANK YOU FOR BEING A DONOR ★';
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--cream);
+    padding: 0 .9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .2em;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .video-aspect {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .video-aspect iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-caption {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .video-caption strong { color: var(--red); }
+
+  /* ============ DONATE CTA ============ */
+  .give {
+    padding: 4rem 2.5rem 6rem;
+    text-align: center;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .give-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(200,16,46,.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(17,35,63,.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .give-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .give-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--ink);
+    margin: 0 auto 2rem;
+  }
+  .give-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -.025em;
+    margin-bottom: 1rem;
+  }
+  .give-title em { color: var(--red); font-style: italic; }
+  .give-sub {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--navy);
+    margin-bottom: 2rem;
+  }
+  .give-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: 1.1rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all .25s ease;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .btn-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--red-deep);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn .arrow { transition: transform .25s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ============ DISCLAIMER ============ */
+  .disclaimer {
+    background: var(--paper);
+    border-top: 1.5px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    padding: 2.5rem 2.5rem;
+    text-align: center;
+  }
+  .disclaimer p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    line-height: 1.7;
+    letter-spacing: .08em;
+    color: var(--navy);
+    text-transform: uppercase;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: rgba(245,239,225,.6);
+    padding: 3rem 2.5rem 2rem;
+    border-top: 4px solid var(--red);
+  }
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .footer-inner a {
+    color: rgba(245,239,225,.6);
+    text-decoration: none;
+    margin: 0 .8rem;
+    transition: color .2s;
+  }
+  .footer-inner a:hover { color: var(--red); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; font-size: .8rem; }
+    .nav-links li:not(:last-child):not(.nav-show) { display: none; }
+    .page-head { padding: 7rem 1.25rem 2rem; }
+    .video-section { padding: 1.5rem 1.25rem 3rem; }
+    .video-frame { padding: .6rem; box-shadow: 6px 6px 0 var(--red); }
+    .video-frame:hover { box-shadow: 9px 9px 0 var(--red); }
+    .give { padding: 3rem 1.25rem 4rem; }
+    .disclaimer { padding: 2rem 1.25rem; }
+  }
+
+  /* entry animations */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .anim { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .d1 { animation-delay: .1s; }
+  .d2 { animation-delay: .25s; }
+  .d3 { animation-delay: .4s; }
+  .d4 { animation-delay: .55s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anim { animation: none; }
+    .video-frame { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="sdyr-homepage_3.html" class="logo">
+    <img src="assets/sdyr-seal.webp" alt="San Diego Young Republicans">
+    <span class="wordmark">SDYR<small>Est. 1994</small></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="sdyr-homepage_3.html#mission">About</a></li>
+    <li><a href="sdyr-homepage_3.html#events">Events</a></li>
+    <li><a href="https://sandiegoyoungrepublicans.org/endorsements/">Endorsements</a></li>
+    <li><a href="sdyr-donate_1.html" class="active">Donate</a></li>
+    <li class="nav-show"><a href="https://sandiegoyoungrepublicans.org/become-a-member/" class="nav-cta">Join Us →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-head">
+  <div class="page-eyebrow anim d1">Support the Movement</div>
+  <h1 class="page-title anim d2">Donate to <em>SDYR.</em></h1>
+  <p class="page-sub anim d3">
+    Every dollar fuels mixers, training, GOTV efforts, and the bench of conservative leaders we're building across San Diego County. Thank you for standing with us.
+  </p>
+</header>
+
+<!-- VIDEO -->
+<section class="video-section anim d4">
+  <div class="video-frame">
+    <div class="video-aspect">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/D104omgooP0?rel=0"
+        title="Thank you for being a Donor — San Diego Young Republicans"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <p class="video-caption">★ A message from <strong>San Diego Young Republicans</strong> ★</p>
+</section>
+
+<!-- DONATE CTA -->
+<section class="give">
+  <div class="give-bg"></div>
+  <div class="give-inner">
+    <div class="give-rule"></div>
+    <h2 class="give-title">Ready to <em>chip in?</em></h2>
+    <p class="give-sub">
+      Contributions go directly to organizing, candidate support, and growing the most active YR chapter in California.
+    </p>
+    <div class="give-ctas">
+      <a href="https://secure.anedot.com/san-diego-young-republicans/0768cfda-67f5-45f2-b2c0-afb97b22fe39" class="btn btn-primary" target="_blank" rel="noopener">
+        Donate Here <span class="arrow">→</span>
+      </a>
+      <a href="https://sandiegoyoungrepublicans.org/become-a-member/" class="btn btn-secondary">
+        Become a Member
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer">
+  <p>
+    Contributions to San Diego Young Republicans are not tax-deductible as charitable contributions for federal income tax purposes. Paid for by San Diego Young Republicans.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 San Diego Young Republicans</div>
+    <div>
+      <a href="https://sandiegoyoungrepublicans.org/terms-and-conditions/">Terms</a>·
+      <a href="https://sandiegoyoungrepublicans.org/privacy-policy/">Privacy</a>·
+      <a href="https://sandiegoyoungrepublicans.org/contact/">Contact</a>
+    </div>
+    <div>★ Ride the Red Wave ★</div>
+  </div>
+</footer>
+
+</body>
+</html>

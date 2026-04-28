@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Support San Diego Young Republicans. Your donation funds events, training, and the next generation of conservative leaders in San Diego County." />
-<title>Donate — San Diego Young Republicans</title>
+<meta name="description" content="Become a member of San Diego Young Republicans. Regular, Student, Silver, and Sustaining memberships available — Coffee with the Chairwoman, members-only events, and more." />
+<title>Become a Member — San Diego Young Republicans</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,800&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -107,7 +106,6 @@
     transition: color .25s;
   }
   .nav-links a:hover { color: var(--red); }
-  .nav-links a.active { color: var(--red); }
   .nav-links a::after {
     content:'';
     position: absolute;
@@ -116,17 +114,16 @@
     background: var(--red);
     transition: width .3s ease;
   }
-  .nav-links a:hover::after,
-  .nav-links a.active::after { width: 100%; }
+  .nav-links a:hover::after { width: 100%; }
   .nav-cta {
-    background: var(--ink);
+    background: var(--red);
     color: var(--cream) !important;
     padding: .65rem 1.2rem;
     border-radius: 2px;
     font-weight: 600;
     transition: all .25s;
   }
-  .nav-cta:hover { background: var(--red); transform: translateY(-1px); }
+  .nav-cta:hover { background: var(--red-deep); transform: translateY(-1px); }
   .nav-cta::after { display: none; }
 
   /* ============ PAGE HEADER ============ */
@@ -162,17 +159,15 @@
     letter-spacing: -.035em;
     margin-bottom: 1.2rem;
   }
-  .page-title em {
-    color: var(--red);
-    font-style: italic;
-  }
+  .page-title em { color: var(--red); font-style: italic; }
   .page-sub {
     font-size: 1.15rem;
     line-height: 1.55;
     color: var(--navy);
-    max-width: 620px;
+    max-width: 680px;
     margin: 0 auto;
   }
+  .page-sub strong { color: var(--ink); }
 
   /* ============ VIDEO ============ */
   .video-section {
@@ -193,7 +188,7 @@
     box-shadow: 13px 13px 0 var(--red);
   }
   .video-frame::before {
-    content: '★ THANK YOU FOR BEING A DONOR ★';
+    content: '★ WELCOME TO THE SDYR FAMILY ★';
     position: absolute;
     top: -14px; left: 50%;
     transform: translateX(-50%);
@@ -220,72 +215,118 @@
     height: 100%;
     border: 0;
   }
-  .video-caption {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: .75rem;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    color: var(--navy);
-  }
-  .video-caption strong { color: var(--red); }
 
-  /* ============ DONATE CTA ============ */
-  .give {
-    padding: 4rem 2.5rem 6rem;
-    text-align: center;
-    background: var(--cream);
-    position: relative;
-    overflow: hidden;
-  }
-  .give-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(200,16,46,.08) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(17,35,63,.08) 0%, transparent 40%);
-    pointer-events: none;
-  }
-  .give-inner {
-    position: relative;
-    max-width: 720px;
+  /* ============ TIERS ============ */
+  .tiers-section {
+    padding: 4rem 2.5rem 5rem;
+    max-width: 1200px;
     margin: 0 auto;
   }
-  .give-rule {
-    width: 60px;
-    height: 2px;
-    background: var(--ink);
-    margin: 0 auto 2rem;
-  }
-  .give-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 800;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.05;
-    letter-spacing: -.025em;
-    margin-bottom: 1rem;
-  }
-  .give-title em { color: var(--red); font-style: italic; }
-  .give-sub {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--navy);
-    margin-bottom: 2rem;
-  }
-  .give-ctas {
+  .tiers-head {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
   }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .85rem;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: .15em;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -.025em;
+  }
+  .section-title em { color: var(--red); font-style: italic; }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .tier {
+    background: var(--white);
+    border: 1.5px solid var(--ink);
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    transition: all .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .tier:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--red);
+  }
+  .tier-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px dashed rgba(10,14,26,.25);
+    padding-bottom: 1.2rem;
+  }
+  .tier-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: .6rem;
+  }
+  .tier-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+  }
+  .tier-price {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--red);
+    letter-spacing: -.02em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .tier-price small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    font-weight: 500;
+    letter-spacing: .15em;
+    color: var(--navy);
+    margin-top: 4px;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .tier-desc {
+    font-size: .98rem;
+    line-height: 1.6;
+    color: var(--navy);
+    flex-grow: 1;
+  }
+  .tier-cta {
+    align-self: flex-start;
+    margin-top: .4rem;
+  }
+
+  /* ============ BUTTONS ============ */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: .6rem;
-    padding: 1.1rem 2rem;
+    padding: .95rem 1.6rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: .95rem;
     text-decoration: none;
     border-radius: 2px;
     transition: all .25s ease;
@@ -303,36 +344,60 @@
     box-shadow: 6px 6px 0 var(--ink);
     background: var(--red-deep);
   }
-  .btn-secondary {
-    background: transparent;
-    color: var(--ink);
-    border: 1.5px solid var(--ink);
-  }
-  .btn-secondary:hover {
-    background: var(--ink);
-    color: var(--cream);
-  }
   .btn .arrow { transition: transform .25s ease; }
   .btn:hover .arrow { transform: translateX(4px); }
 
-  /* ============ DISCLAIMER ============ */
-  .disclaimer {
-    background: var(--paper);
-    border-top: 1.5px solid var(--ink);
-    border-bottom: 1.5px solid var(--ink);
-    padding: 2.5rem 2.5rem;
+  /* ============ SPONSORSHIP ============ */
+  .sponsor {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .sponsor-inner {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
   }
-  .disclaimer p {
-    max-width: 800px;
-    margin: 0 auto;
+  .sponsor-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: .72rem;
-    line-height: 1.7;
-    letter-spacing: .08em;
-    color: var(--navy);
+    font-size: .75rem;
     text-transform: uppercase;
+    letter-spacing: .25em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
   }
+  .sponsor-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    margin-bottom: 1.2rem;
+  }
+  .sponsor-title em { color: var(--gold); font-style: italic; }
+  .sponsor-body {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(245,239,225,.85);
+    max-width: 720px;
+    margin: 0 auto 1.8rem;
+  }
+  .sponsor-email {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 4px;
+    transition: color .25s, border-color .25s;
+  }
+  .sponsor-email:hover { color: var(--gold); }
 
   /* ============ FOOTER ============ */
   footer {
@@ -371,8 +436,12 @@
     .video-section { padding: 1.5rem 1.25rem 3rem; }
     .video-frame { padding: .6rem; box-shadow: 6px 6px 0 var(--red); }
     .video-frame:hover { box-shadow: 9px 9px 0 var(--red); }
-    .give { padding: 3rem 1.25rem 4rem; }
-    .disclaimer { padding: 2rem 1.25rem; }
+    .tiers-section { padding: 3rem 1.25rem 4rem; }
+    .tiers-grid { grid-template-columns: 1fr; }
+    .tier { padding: 1.6rem; }
+    .tier-name { font-size: 1.5rem; }
+    .tier-price { font-size: 1.8rem; }
+    .sponsor { padding: 3.5rem 1.25rem; }
   }
 
   /* entry animations */
@@ -388,7 +457,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .anim { animation: none; }
-    .video-frame { transition: none; }
+    .video-frame, .tier { transition: none; }
   }
 </style>
 </head>
@@ -404,17 +473,18 @@
     <li><a href="sdyr-homepage_3.html#mission">About</a></li>
     <li><a href="sdyr-homepage_3.html#events">Events</a></li>
     <li><a href="https://sandiegoyoungrepublicans.org/endorsements/">Endorsements</a></li>
-    <li><a href="sdyr-donate_1.html" class="active">Donate</a></li>
-    <li class="nav-show"><a href="sdyr-members_1.html" class="nav-cta">Join Us →</a></li>
+    <li><a href="sdyr-donate_1.html">Donate</a></li>
+    <li><a href="https://sandiegoyoungrepublicans.org/contact/">Contact</a></li>
+    <li class="nav-show"><a href="sdyr-members_1.html" class="nav-cta">Join Now ★</a></li>
   </ul>
 </nav>
 
 <!-- PAGE HEADER -->
 <header class="page-head">
-  <div class="page-eyebrow anim d1">Support the Movement</div>
-  <h1 class="page-title anim d2">Donate to <em>SDYR.</em></h1>
+  <div class="page-eyebrow anim d1">Ages 18–40 · San Diego County</div>
+  <h1 class="page-title anim d2">Become a <em>Member.</em></h1>
   <p class="page-sub anim d3">
-    Every dollar fuels mixers, training, GOTV efforts, and the bench of conservative leaders we're building across San Diego County. Thank you for standing with us.
+    Join San Diego Young Republicans and be part of the greatest party around. Membership perks include <strong>Coffee with the Chairwoman</strong>, exclusive members-only events, discounted rates for paid events, and so much more.
   </p>
 </header>
 
@@ -423,42 +493,103 @@
   <div class="video-frame">
     <div class="video-aspect">
       <iframe
-        src="https://www.youtube-nocookie.com/embed/D104omgooP0?rel=0"
-        title="Thank you for being a Donor — San Diego Young Republicans"
+        src="https://www.youtube-nocookie.com/embed/7Mlsa8iOBEw?rel=0"
+        title="Welcome to the SDYR Family — San Diego Young Republicans"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen></iframe>
     </div>
   </div>
-  <p class="video-caption">★ A message from <strong>San Diego Young Republicans</strong> ★</p>
 </section>
 
-<!-- DONATE CTA -->
-<section class="give">
-  <div class="give-bg"></div>
-  <div class="give-inner">
-    <div class="give-rule"></div>
-    <h2 class="give-title">Ready to <em>chip in?</em></h2>
-    <p class="give-sub">
-      Contributions go directly to organizing, candidate support, and growing the most active YR chapter in California.
-    </p>
-    <div class="give-ctas">
-      <a href="https://secure.anedot.com/san-diego-young-republicans/0768cfda-67f5-45f2-b2c0-afb97b22fe39" class="btn btn-primary" target="_blank" rel="noopener">
-        Donate Here <span class="arrow">→</span>
+<!-- TIERS -->
+<section class="tiers-section">
+  <div class="tiers-head">
+    <span class="section-num">— Pick your tier</span>
+    <h2 class="section-title">Four ways to <em>join in.</em></h2>
+  </div>
+  <div class="tiers-grid">
+
+    <article class="tier">
+      <div class="tier-head">
+        <div>
+          <div class="tier-label">→ 01 / Regular</div>
+          <h3 class="tier-name">Regular Member</h3>
+        </div>
+        <div class="tier-price">$50<small>per year</small></div>
+      </div>
+      <p class="tier-desc">
+        The full SDYR experience for ages 18–40. All membership perks: Coffee with the Chairwoman, exclusive members-only events, discounted rates for paid events, and the rest of the room.
+      </p>
+      <a href="https://secure.anedot.com/san-diego-young-republicans/5dfcca4c-ca4b-4ed0-8d02-0388853de93d" class="btn btn-primary tier-cta" target="_blank" rel="noopener">
+        Become a Regular Member <span class="arrow">→</span>
       </a>
-      <a href="sdyr-members_1.html" class="btn btn-secondary">
-        Become a Member
+    </article>
+
+    <article class="tier">
+      <div class="tier-head">
+        <div>
+          <div class="tier-label">→ 02 / Student</div>
+          <h3 class="tier-name">Student Member</h3>
+        </div>
+        <div class="tier-price">$5<small>per month</small></div>
+      </div>
+      <p class="tier-desc">
+        All the membership perks at a monthly rate. Perfect if you're attending high school, grad school, technical school, or anything in between.
+      </p>
+      <a href="https://secure.anedot.com/san-diego-young-republicans/student" class="btn btn-primary tier-cta" target="_blank" rel="noopener">
+        Become a Student Member <span class="arrow">→</span>
       </a>
-    </div>
+    </article>
+
+    <article class="tier">
+      <div class="tier-head">
+        <div>
+          <div class="tier-label">→ 03 / Silver</div>
+          <h3 class="tier-name">Silver Member</h3>
+        </div>
+        <div class="tier-price">$50<small>per year</small></div>
+      </div>
+      <p class="tier-desc">
+        Out of the 18–40 age range but still want to support the cause? Become a Silver Member to back SDYR and gain access to all its membership perks.
+      </p>
+      <a href="https://secure.anedot.com/san-diego-young-republicans/3d573970-4713-41a0-aa6c-899399859a32" class="btn btn-primary tier-cta" target="_blank" rel="noopener">
+        Become a Silver Member <span class="arrow">→</span>
+      </a>
+    </article>
+
+    <article class="tier">
+      <div class="tier-head">
+        <div>
+          <div class="tier-label">→ 04 / Sustaining</div>
+          <h3 class="tier-name">Sustaining Member</h3>
+        </div>
+        <div class="tier-price">$85<small>per year</small></div>
+      </div>
+      <p class="tier-desc">
+        An annual donation for folks who want to help out a little extra. Sustaining perks include Coffee with the Chairwoman, access to members-only events, discounts for programs, monthly recognition in the newsletter, and your name displayed on our website.
+      </p>
+      <a href="https://secure.anedot.com/san-diego-young-republicans/sustaining" class="btn btn-primary tier-cta" target="_blank" rel="noopener">
+        Become a Sustaining Member <span class="arrow">→</span>
+      </a>
+    </article>
+
   </div>
 </section>
 
-<!-- DISCLAIMER -->
-<section class="disclaimer">
-  <p>
-    Contributions to San Diego Young Republicans are not tax-deductible as charitable contributions for federal income tax purposes. Paid for by San Diego Young Republicans.
-  </p>
+<!-- SPONSORSHIP -->
+<section class="sponsor">
+  <div class="sponsor-inner">
+    <div class="sponsor-eyebrow">★ Membership Sponsorship ★</div>
+    <h2 class="sponsor-title">Lift up the <em>next member.</em></h2>
+    <p class="sponsor-body">
+      Sponsorship opportunities are available for those who want to help cover membership for someone who can't afford it. If you're a member who can't afford the membership, or if you're interested in sponsoring a member, get in touch:
+    </p>
+    <a href="mailto:SDYRPresident@gmail.com" class="sponsor-email">
+      SDYRPresident@gmail.com
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->

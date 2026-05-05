@@ -428,6 +428,61 @@
     color: rgba(245,239,225,.85);
   }
 
+  /* ============ PRESIDENT VIDEO ============ */
+  .prez-video {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .prez-video-frame {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    padding: 1.25rem;
+    box-shadow: 10px 10px 0 var(--red);
+    position: relative;
+  }
+  .prez-video-frame::before {
+    content: '★ FROM THE PRESIDENT ★';
+    position: absolute;
+    top: -14px; left: 2rem;
+    background: var(--cream);
+    padding: 0 .8rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .2em;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .prez-video-aspect {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .prez-video-aspect iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .prez-video-caption {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .prez-video-caption strong { color: var(--red); }
+
   /* ============ EVENTS ============ */
   .events {
     padding: 6rem 2.5rem;
@@ -829,7 +884,7 @@
     .stamp-card { transform: rotate(-1deg); }
     .mission { padding: 4rem 1.25rem; }
     .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .events, .members, .pillars { padding: 4rem 1.25rem; }
+    .events, .members, .pillars, .prez-video { padding: 4rem 1.25rem; }
     .events-grid { grid-template-columns: 1fr; }
     .pillars-grid { grid-template-columns: 1fr 1fr; }
     .pillar:nth-child(2) { border-right: none; }
@@ -956,11 +1011,35 @@
   </div>
 </section>
 
+<!-- PRESIDENT VIDEO -->
+<section class="prez-video" id="message">
+  <div class="section-head">
+    <span class="section-num">— 02 / Message</span>
+    <h2 class="section-title">A word from our<br><em>board president.</em></h2>
+  </div>
+  <div class="prez-video-frame">
+    <div class="prez-video-aspect">
+      <!-- Replace VIDEO_ID below with the YouTube video ID once filmed -->
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+        title="A message from the SDYR board president"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+    <div class="prez-video-caption">
+      <span><strong>★</strong> San Diego Young Republicans</span>
+      <span>Board President · 2026</span>
+    </div>
+  </div>
+</section>
+
 <!-- PILLARS -->
 <section class="pillars">
   <div class="pillars-inner">
     <div class="section-head">
-      <span class="section-num">— 02 / Pillars</span>
+      <span class="section-num">— 03 / Pillars</span>
       <h2 class="section-title">Four ways<br>we <em>show up.</em></h2>
     </div>
     <div class="pillars-grid">
@@ -991,7 +1070,7 @@
 <!-- EVENTS -->
 <section class="events" id="events">
   <div class="section-head">
-    <span class="section-num">— 03 / Calendar</span>
+    <span class="section-num">— 04 / Calendar</span>
     <h2 class="section-title">Events <em>every</em><br>single month.</h2>
   </div>
   <div class="events-grid">
@@ -1028,7 +1107,7 @@
     <div class="join-stamp">
       <img src="assets/sdyr-seal.webp" alt="SDYR seal">
     </div>
-    <div class="section-num" style="margin-bottom:1rem;">— 04 / Join the Movement</div>
+    <div class="section-num" style="margin-bottom:1rem;">— 05 / Join the Movement</div>
     <h2 class="join-title">Together,<br>we change <em>San Diego.</em></h2>
     <p class="join-sub">If you're between 18 and 40 and ready to do more than scroll politics — this is your room. Join one of the most active Young Republican chapters in California.</p>
     <div class="hero-ctas" style="justify-content:center;">
@@ -1067,7 +1146,7 @@
 
 <!-- COMMUNITY CHAMPIONS -->
 <section class="champions">
-  <div class="champions-eyebrow">— 05 / Community Champions</div>
+  <div class="champions-eyebrow">— 06 / Community Champions</div>
   <h2 class="champions-title">Allies in the <em>arena.</em></h2>
   <div class="champions-grid">
     <a href="https://carlsbadrepublicans.com/" class="champion" target="_blank" rel="noopener">
@@ -1085,7 +1164,7 @@
 
 <!-- SUSTAINING MEMBERS -->
 <section class="members">
-  <div class="members-eyebrow">— 06 / Sustaining Members</div>
+  <div class="members-eyebrow">— 07 / Sustaining Members</div>
   <h2 class="members-title">The backbone of the movement.</h2>
   <ul class="members-list">
     <li>Cynthia Kaui</li>

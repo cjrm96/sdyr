@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marting for Fire Board — Cole Marting for North County Fire Protection District</title>
+<meta name="description" content="Cole Marting is running for the North County Fire Protection District Board. Wildfire prevention, EMS, community resilience, and fiscal responsibility." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:      #c8102e;
+    --red-deep: #8b0a1f;
+    --ink:      #0a0e1a;
+    --navy:     #11233f;
+    --cream:    #f5efe1;
+    --paper:    #ede4cf;
+    --gold:     #d4a017;
+    --white:    #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  /* paper grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: .07;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 4rem 0 3.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    color: var(--red);
+    margin-bottom: 1.4rem;
+    font-weight: 700;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--red);
+  }
+
+  h1.hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 6.5vw, 5rem);
+    line-height: .95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+  }
+  h1.hero-title .red {
+    color: var(--red);
+    font-style: italic;
+  }
+  h1.hero-title .underline {
+    display: inline-block;
+    position: relative;
+  }
+  h1.hero-title .underline::after {
+    content: '';
+    position: absolute;
+    left: -2%; right: -2%;
+    bottom: 6%;
+    height: 12px;
+    background: var(--gold);
+    z-index: -1;
+    transform: skewX(-8deg);
+    opacity: .85;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--navy);
+    max-width: 520px;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow:
+      0 1px 0 rgba(10,14,26,.06),
+      0 12px 28px rgba(10,14,26,.18);
+    border: 1px solid rgba(10,14,26,.08);
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(10,14,26,.12);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--navy);
+  }
+  .meta-row strong {
+    color: var(--ink);
+    display: block;
+    font-size: .8rem;
+    margin-top: .3rem;
+    font-family: 'Inter Tight', sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 600;
+  }
+
+  /* ============ ISSUES ============ */
+  .issues {
+    padding: 3.5rem 0 4rem;
+    border-top: 1px solid rgba(10,14,26,.12);
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: .9rem;
+  }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 2.4rem;
+    max-width: 720px;
+  }
+
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .issue {
+    background: var(--white);
+    border: 1px solid rgba(10,14,26,.1);
+    border-radius: 4px;
+    padding: 1.8rem 1.7rem;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .issue:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(10,14,26,.08);
+  }
+  .issue-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin-bottom: .7rem;
+  }
+  .issue h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: .8rem;
+  }
+  .issue p {
+    color: var(--navy);
+    font-size: .98rem;
+    line-height: 1.6;
+  }
+  .issue ul {
+    margin-top: .8rem;
+    padding-left: 1.1rem;
+    color: var(--navy);
+    font-size: .94rem;
+  }
+  .issue ul li {
+    margin-bottom: .35rem;
+    line-height: 1.5;
+  }
+
+  /* ============ CTA ============ */
+  .cta {
+    margin: 0 0 4rem;
+    padding: 3rem 2.5rem;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 6px;
+    text-align: center;
+  }
+  .cta h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    letter-spacing: -0.02em;
+    margin-bottom: .7rem;
+  }
+  .cta h2 .red {
+    color: var(--red);
+    font-style: italic;
+  }
+  .cta p {
+    color: rgba(245,239,225,.75);
+    margin-bottom: 1.6rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 1.8rem;
+    background: var(--red);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    letter-spacing: .02em;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn:hover {
+    background: var(--red-deep);
+    transform: translateY(-1px);
+  }
+
+  .signoff {
+    text-align: center;
+    padding: 0 0 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    color: var(--navy);
+    opacity: .65;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 820px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 2.5rem;
+      gap: 2rem;
+    }
+    .hero-photo-wrap { order: -1; max-width: 360px; }
+    .issue-grid { grid-template-columns: 1fr; }
+    .cta { padding: 2.2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">North County Fire Protection District</div>
+      <h1 class="hero-title">
+        <span class="red">Marting</span><br>
+        for <span class="underline">Fire Board</span>
+      </h1>
+      <p class="hero-sub">
+        Cole Marting is running to keep North County families safe — with smarter wildfire prevention, world-class EMS, and a board that spends every dollar like it's their own.
+      </p>
+      <div class="meta-row">
+        <div>
+          On the Ballot
+          <strong>North County Fire Protection District</strong>
+        </div>
+        <div>
+          Candidate
+          <strong>Cole Marting</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="assets/cole-marting.jpg" alt="Cole Marting, candidate for North County Fire Protection District Board" />
+    </div>
+  </section>
+
+  <section class="issues">
+    <div class="section-label">On the Issues</div>
+    <h2 class="section-title">A practical plan for a safer North County.</h2>
+
+    <div class="issue-grid">
+
+      <article class="issue">
+        <div class="issue-num">01 / Wildfire Prevention</div>
+        <h3>Stop fires before they start.</h3>
+        <p>Every year, North County families live with the fear of evacuation. We can do better by hardening the landscape and equipping our firefighters for the realities of today's fire season.</p>
+        <ul>
+          <li>Clear hazardous brush and reduce fuel loads through thinning, grazing, prescribed burns, and new technology</li>
+          <li>Help partner agencies acquire a twin-engine firefighting helicopter, water tenders, and additional heli-hydrants</li>
+          <li>Conduct a full review of reservoirs, hydrants, and water mains to ensure they meet emergency needs</li>
+        </ul>
+      </article>
+
+      <article class="issue">
+        <div class="issue-num">02 / Emergency Medical Services</div>
+        <h3>When you call 911, help shows up fast.</h3>
+        <p>Nearly 70% of North County Fire's calls are medical emergencies. No matter where you live in the district, you deserve fast, professional care when seconds count.</p>
+        <ul>
+          <li>Maintain and improve one of the best EMS programs in the state</li>
+          <li>Invest in equipment, training, and technology that strengthens day-to-day readiness</li>
+          <li>Defend response times across every neighborhood we serve</li>
+        </ul>
+      </article>
+
+      <article class="issue">
+        <div class="issue-num">03 / Community Resilience</div>
+        <h3>Insurance, infrastructure, and coordination that hold up under pressure.</h3>
+        <p>A resilient community is one where families can afford to live, where infrastructure is ready, and where every agency is rowing in the same direction when disaster strikes.</p>
+        <ul>
+          <li>Push back against insurance carrier abandonment in fire-prone areas</li>
+          <li>Coordinate joint disaster planning between fire districts, water agencies, and emergency services</li>
+          <li>Strengthen large-scale readiness for the worst-case scenarios — before they happen</li>
+        </ul>
+      </article>
+
+      <article class="issue">
+        <div class="issue-num">04 / Fiscal Responsibility</div>
+        <h3>Transparency and discipline with every taxpayer dollar.</h3>
+        <p>Public safety budgets are public trust. The board's job is to protect that trust, deliver results, and never confuse spending more with doing more.</p>
+        <ul>
+          <li>Bring transparency to budgeting, contracts, and board decision-making</li>
+          <li>Invest in what works — and cut what doesn't</li>
+          <li>Treat the district's finances with the same care families do at the kitchen table</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Join the campaign to <span class="red">protect North County.</span></h2>
+    <p>Read the full platform, sign up for updates, or get involved at ColeMarting.com.</p>
+    <a class="btn" href="https://colemarting.com" rel="noopener">Visit ColeMarting.com →</a>
+  </section>
+
+  <div class="signoff">Paid for by Cole Marting for North County Fire</div>
+
+</main>
+
+</body>
+</html>
